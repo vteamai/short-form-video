@@ -7,7 +7,7 @@ Created on Mon Jul  5 23:38:10 2021
 
 import config
 from keyword_generation import correct_timestamp_entry
-from srt_generation import create_srt
+#from srt_generation import create_srt
 from audio_transcription import extract_audio, english_transcription
 from text_processing import apply_punctuation
 from moviepy.editor import VideoFileClip, concatenate_videoclips
@@ -40,12 +40,13 @@ def create_videos_srt(user_topics, topic_video_dict, videoname):
     word_ts, video_trans = english_transcription(final_audio)
     video_trans = apply_punctuation(video_trans)
     word_ts = correct_timestamp_entry(word_ts, video_trans)
-    srt_file = create_srt(word_ts, 4, final_audio)
+    #srt_file = create_srt(word_ts, 4, final_audio)
     
-    return short_videoname, srt_file
+    return short_videoname#, srt_file
 
 def generate_short_videos(videoname, topic_timestamps, user_topics):
     topic_video_dict = split_videos(videoname, topic_timestamps)
-    short_videoname, srt_file = create_videos_srt(user_topics, topic_video_dict, videoname)
+    #short_videoname, srt_file = create_videos_srt(user_topics, topic_video_dict, videoname)
+    short_videoname = create_videos_srt(user_topics, topic_video_dict, videoname)
     
-    return short_videoname, srt_file
+    return short_videoname#, srt_file

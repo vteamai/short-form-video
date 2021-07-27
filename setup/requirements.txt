@@ -1,0 +1,10 @@
+keybert
+moviepy 
+regex
+streamlit 
+nltk 
+torch
+tensorflow                       
+tensorflow-hub   
+punctuator 
+gingerit
